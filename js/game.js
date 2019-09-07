@@ -5,13 +5,13 @@ const bird = new Image();
 const bg = new Image();
 const fg = new Image();
 const pipeUp = new Image();
-const pipeBotton = new Image();
+const pipeBottom = new Image();
 
 bird.src = "img/flappy_bird_bird.png";
 bg.src = "img/flappy_bird_bg.png";
 fg.src = "img/flappy_bird_fg.png";
-pipeUp.src = "img/flappy_bird_pipeBottom.png";
-pipeBotton.src = "img/flappy_bird_pipeUp.png";
+pipeBottom.src = "img/flappy_bird_pipeBottom.png";
+pipeUp.src = "img/flappy_bird_pipeUp.png";
 
 // Звуковые файлы
 const fly = new Audio();
@@ -49,7 +49,7 @@ function draw() {
     
     for (let i = 0; i < pipe.length; i++) {
         ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
-        ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+        ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
         
         pipe[i].x--;
         
@@ -86,7 +86,7 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-pipeBotton.onload = draw;
+pipeBottom.onload = draw;
 
 
 
